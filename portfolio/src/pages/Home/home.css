@@ -1,0 +1,117 @@
+.home-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 4rem;
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* image */
+.about-me-image-container {
+    width: 250px;
+    height: 250px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* right side */
+.about-me-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 700px;
+    width: 100%;
+}
+
+.about-me-info-container p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* projects + contact sections */
+#projects,
+#contact, #background {
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* tech stack */
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* contact */
+ .contact-description {
+    width: 100%;
+    line-height: 1.6;
+    margin: 1rem 0 2rem 0;
+    text-align: left;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.contact-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    padding: 0.6rem;
+    border-radius: 0.7rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-item:hover .contact-icon {
+    background-color: var(--icon-bg);
+    transform: translateY(-5px);
+}
+
+
+.contact-item span {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+
+    font-size: 0.75rem;
+    background: var(--icon-bg);
+    padding: 3px 8px;
+    border-radius: 6px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.contact-item:hover span {
+    opacity: 1;
+}

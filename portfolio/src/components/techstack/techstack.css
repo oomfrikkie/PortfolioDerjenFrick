@@ -1,0 +1,39 @@
+.tech-stack{
+    display: flex;
+    gap: 1rem;
+}
+
+.tech-item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    font-size: 2.5rem;
+    padding: 0.6rem;
+    border-radius: 0.7rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.icon:hover{
+    background-color: var(--icon-bg);
+    transform: translateY(-5px);
+}
+
+.tech-name{
+    position: absolute;
+    bottom: -1.8rem;
+    font-size: 0.75rem;
+    background: var(--icon-bg);
+    padding: 3px 8px;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.tech-item:hover .tech-name{
+    opacity: 1;
+}

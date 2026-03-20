@@ -1,0 +1,73 @@
+[
+ {
+  "slug": "ecommerce-website",
+  "title": "Ecommerce Website",
+  "description": "A mock ecommerce platform built to demonstrate my full-stack development skills. The application features backend-driven product management, order handling, and a functional cart system, showcasing how data flows between the frontend and backend. It also includes basic OAuth authentication principles, highlighting user login and security fundamentals within a modern web application.",
+  "link": "https://github.com/oomfrikkie/EcommerceWebsite",
+  "image1": "/taskappadd.png",
+  "image1description": "Add task screen",
+  "image2": "/taskappweekly.png",
+  "image2description": "Weekly overview screen"
+},
+  {
+  "slug": "task-app",
+  "title": "Task App",
+  "description": "A task management application developed as part of my Personal Development Plan to learn full-stack mobile development. Built using React Native with a backend integration, the app allows users to create, manage, and track tasks, demonstrating my understanding of connecting frontend mobile interfaces with backend services.",
+  "link": "https://github.com/oomfrikkie/task-app",
+  "image1": "/taskappadd.png",
+  "image1description": "Add task screen",
+  "image2": "/taskappweekly.png",
+  "image2description": "Weekly overview screen"
+},
+  {
+    "slug": "smart-time-registration",
+    "title": "Smart Time Registration",
+    "description": "A smart time tracking solution that imports calendar data and links entries to projects, featuring secure Microsoft authentication and organizational insights.",
+    "link": "https://github.com/oomfrikkie/SmartTimeRegistration",
+    "image1": "/placeholder1024.png",
+    "image1description": "description1",
+    "image2": "/placeholder1024.png",
+    "image2description": "description2"
+  },
+  {
+    "slug": "streamflix",
+    "title": "StreamFlix",
+    "description": "A full-stack streaming platform inspired by Netflix, offering user authentication, personalized watchlists, and API-driven content delivery.",
+    "link": "https://github.com/oomfrikkie/StreamSyncAPI",
+    "image1": "/placeholder1024.png",
+    "image1description": "description1",
+    "image2": "/placeholder1024.png",
+    "image2description": "description2"
+  },
+  {
+    "slug": "bin-there-done-that",
+    "title": "Bin There, Done That",
+    "description": "An interactive web app designed to educate users on waste separation and sustainability through engaging, game-based learning experiences.",
+    "link": "https://binthere-donethat.vercel.app/",
+    "image1": "/binthereminigames.png",
+    "image1description": "Mini-games for recycling education",
+    "image2": "/binthereaisorter.png",
+    "image2description": "AI-powered trash sorting feature"
+  },
+  {
+    "slug": "ssm-product-passport-tracking",
+    "title": "SSM Product Passport Tracking",
+    "description": "A comprehensive group project focused on building a product passport tracking system. The application centralizes and structures product data, allowing users to monitor lifecycle information, sustainability metrics, and supply chain transparency. It implements UNS-inspired principles for data organization, making it easier for manufacturers, suppliers, and consumers to access and verify product details throughout the supply chain. The system is designed to improve traceability, accountability, and trust in product sourcing and movement across industries.",
+    "link": "https://github.com/oomfrikkie/productpassportresit",
+    "image1": "/placeholder1024.png",
+    "image1description": "description1",
+    "image2": "/placeholder1024.png",
+    "image2description": "description2"
+  },
+  {
+    "slug": "nhl-stenden-explorer",
+    "title": "NHL Stenden Explorer",
+    "description": "NHL Stenden Explorer is a web application designed to help students, staff, parents, and visitors explore the Emmen campus virtually. The app’s main goal is to make campus information and navigation easy and accessible for everyone. It features an interactive 360-degree photo viewer, allowing users to visually tour the facilities and learn how to get around. With always-available access, the app enhances the campus experience by providing important details and a virtual guide for all users.",
+    "link": "https://github.com/KyanJeuring/NHLStendenExplorer",
+    "image1": "/placeholder1024.png",
+    "image1description": "description1",
+    "image2": "/placeholder1024.png",
+    "image2description": "description2"
+  }
+]
+

@@ -1,0 +1,27 @@
+/* prevent horizontal scrolling */
+body{
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* root container */
+#root{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* page content wrapper */
+.app-container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* centers page content */
+  padding: 2rem;
+}
+
+/* section spacing */
+section{
+  margin-bottom: 4rem;
+}
