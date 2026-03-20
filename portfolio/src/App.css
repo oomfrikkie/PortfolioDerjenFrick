@@ -20,6 +20,19 @@ body{
   margin: 0 auto; /* centers page content */
   padding: 2rem;
 }
+  @media (max-width: 900px) {
+    .app-container {
+      max-width: 100%;
+      padding: 1rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .app-container {
+      max-width: 100%;
+      padding: 0.5rem;
+    }
+  }
 
 /* section spacing */
 section{

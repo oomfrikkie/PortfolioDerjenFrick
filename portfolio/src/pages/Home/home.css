@@ -40,6 +40,40 @@
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
+@media (max-width: 900px) {
+    .about-me-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+    .about-me-image-container {
+        width: 180px;
+        height: 180px;
+    }
+    .about-me-info-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-section {
+        gap: 2rem;
+        padding: 0.5rem;
+    }
+    .about-me-container {
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 100%;
+    }
+    .about-me-image-container {
+        width: 120px;
+        height: 120px;
+    }
+    .about-me-info-container {
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+}
 
 /* projects + contact sections */
 #projects,

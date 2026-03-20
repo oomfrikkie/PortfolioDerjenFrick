@@ -14,7 +14,7 @@
   "title": "Task App",
   "description": "A task management application developed as part of my Personal Development Plan to learn full-stack mobile development. Built using React Native with a backend integration, the app allows users to create, manage, and track tasks, demonstrating my understanding of connecting frontend mobile interfaces with backend services.",
   "link": "https://github.com/oomfrikkie/task-app",
-  "image1": "/taskappadd.png",
+   "image1": "/taskappadd.png",
   "image1description": "Add task screen",
   "image2": "/taskappweekly.png",
   "image2description": "Weekly overview screen"

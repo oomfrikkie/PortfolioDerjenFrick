@@ -34,3 +34,14 @@ body{
 html {
     scroll-behavior: smooth;
 }
+  @media (max-width: 900px) {
+    section {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    section {
+      margin-bottom: 1rem;
+    }
+  }
