@@ -25,9 +25,10 @@
 }
 
 /* nav links */
+/* nav links */
 .nav-links{
-    display: flex;
-    gap: 2rem;
+        display: flex;
+        gap: 2rem;
 }
 
 .nav-links a{
