@@ -2,6 +2,8 @@
     width: 100%;
     border-bottom: 1px solid var(--border-subtle);
     background-color: var(--bg-main);
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .navbar-container{

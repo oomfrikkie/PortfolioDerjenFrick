@@ -149,7 +149,7 @@ export default function Home() {
             <span>GitHub</span>
           </a>
 
-          <a href="mailto:youremail@example.com" className="contact-item">
+          <a href="mailto:derjen.frick@gmail.com" className="contact-item">
             <MdEmail className="contact-icon" />
             <span>Email</span>
           </a>

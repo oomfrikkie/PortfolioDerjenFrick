@@ -5,6 +5,8 @@
     align-items: center;
     padding: 1rem;
     gap: 4rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .about-me-container {

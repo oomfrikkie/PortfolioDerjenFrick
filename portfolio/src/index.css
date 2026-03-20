@@ -29,6 +29,8 @@ body{
   background-color: var(--bg-main);
   color: var(--text-main);
   line-height: 1.6;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 html {
