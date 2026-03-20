@@ -18,6 +18,35 @@
 	animation: orbitShadow 1.8s linear infinite;
 }
 
+/* Animation for project card hover */
+
+@keyframes orbitShadow {
+	0% {
+		box-shadow:
+			0 2px 16px rgba(0,0,0,0.08),
+			8px 0 20px rgba(64, 0, 255, 0.18);
+	}
+	25% {
+		box-shadow:
+			0 2px 16px rgba(0,0,0,0.08),
+			0 8px 20px rgba(64, 0, 255, 0.18);
+	}
+	50% {
+		box-shadow:
+			0 2px 16px rgba(0,0,0,0.08),
+			-8px 0 20px rgba(64, 0, 255, 0.18);
+	}
+	75% {
+		box-shadow:
+			0 2px 16px rgba(0,0,0,0.08),
+			0 -8px 20px rgba(64, 0, 255, 0.18);
+	}
+	100% {
+		box-shadow:
+			0 2px 16px rgba(0,0,0,0.08),
+			8px 0 20px rgba(64, 0, 255, 0.18);
+	}
+}
 .project-card-image {
 	width: 240px;
 	height: 140px;
