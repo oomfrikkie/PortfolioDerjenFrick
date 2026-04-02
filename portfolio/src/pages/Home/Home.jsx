@@ -12,7 +12,7 @@ export default function Home() {
     <section className="home-section">
       <div id="about" className="about-me-container">
         <div className="about-me-image-container">
-          <h1>Image</h1>
+          <img src="me.jpg" alt="" />
         </div>
 
         <div className="about-me-info-container">
