@@ -165,7 +165,8 @@ export default function Home() {
           </a>
 
           <a
-            href="/cv.pdf"
+            href="/Derjen_Frick_cv.pdf"
+            download
             target="_blank"
             rel="noopener noreferrer"
             className="contact-item"
