@@ -70,7 +70,7 @@ export default function Home() {
           <ProjectCard
             title="Smart Time Registration"
             description="A system that processes Outlook calendar data to automatically calculate time spent on projects. The application parses imported files and structures the data to provide clear insights into time tracking and productivity."
-            image="vite.svg"
+            image="strcover.png"
             slug="smart-time-registration"
             onClick={() => navigate("/projects/smart-time-registration")}
           />
