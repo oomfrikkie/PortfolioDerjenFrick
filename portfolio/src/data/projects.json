@@ -64,10 +64,10 @@
     "title": "NHL Stenden Explorer",
     "description": "NHL Stenden Explorer is a web application designed to help students, staff, parents, and visitors explore the Emmen campus virtually. The app’s main goal is to make campus information and navigation easy and accessible for everyone. It features an interactive 360-degree photo viewer, allowing users to visually tour the facilities and learn how to get around. With always-available access, the app enhances the campus experience by providing important details and a virtual guide for all users.",
     "link": "https://github.com/KyanJeuring/NHLStendenExplorer",
-    "image1": "/placeholder1024.png",
-    "image1description": "description1",
-    "image2": "/placeholder1024.png",
-    "image2description": "description2"
+    "image1": "/nhls360.png",
+    "image1description": "In the project, we used a 360 degree camera to integrate a 360 photo viewer so users could explore our campus locations through the website and get a clear understanding of the surroundings of the campus.",
+    "image2": "/nhlsfaq.png",
+    "image2description": "Because our main goal was to provide information and views of the campus, we also created a faq Page"
   }
 ]
 

@@ -94,7 +94,7 @@ export default function Home() {
           <ProjectCard
                       title="NHL Stenden Explorer"
                       description="A tool for students, staff, parents, and visitors to virtually explore the NHL Stenden Emmen campus. The web app offers interactive 360-degree images and important facility information, making campus navigation and discovery easy and accessible."
-                      image="vite.svg"
+                      image="nhlsexplore.png"
                       slug="nhl-stenden-explorer"
                       onClick={() => navigate("/projects/nhl-stenden-explorer")}
                     />
