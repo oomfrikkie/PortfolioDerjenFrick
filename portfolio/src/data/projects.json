@@ -4,9 +4,9 @@
   "title": "Ecommerce Website",
   "description": "A mock ecommerce platform built to demonstrate my full-stack development skills. The application features backend-driven product management, order handling, and a functional cart system, showcasing how data flows between the frontend and backend. It also includes basic OAuth authentication principles, highlighting user login and security fundamentals within a modern web application.",
   "link": "https://github.com/oomfrikkie/EcommerceWebsite",
-  "image1": "/taskappadd.png",
+  "image1": "/placeholder1024.png",
   "image1description": "Add task screen",
-  "image2": "/taskappweekly.png",
+  "image2": "/placeholder1024.png",
   "image2description": "Weekly overview screen"
 },
   {
@@ -25,9 +25,9 @@
     "description": "A smart time tracking solution that imports calendar data and links entries to projects, featuring secure Microsoft authentication and organizational insights.",
     "link": "https://github.com/oomfrikkie/SmartTimeRegistration",
     "image1": "/str1.png",
-    "image1description": "description1",
+    "image1description": "Home page with all calendar import data",
     "image2": "/str2.png",
-    "image2description": "description2"
+    "image2description": "Projects page from admin view"
   },
   {
     "slug": "streamflix",
