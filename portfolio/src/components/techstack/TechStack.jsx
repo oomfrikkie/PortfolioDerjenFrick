@@ -1,11 +1,13 @@
-import { FaJava, FaDocker, FaReact } from "react-icons/fa";
+import { FaJava, FaDocker, FaReact, FaPhp } from "react-icons/fa";
 import {
   SiJavascript,
   SiTypescript,
   SiPostgresql,
   SiMariadb,
   SiTailwindcss,
+  SiDotnet,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 
 import "./techstack.css";
 
@@ -16,6 +18,21 @@ export default function TechStack() {
       <div className="tech-item">
         <FaJava className="icon" />
         <span className="tech-name">Java</span>
+      </div>
+
+      <div className="tech-item">
+        <TbBrandCSharp className="icon" />
+        <span className="tech-name">C#</span>
+      </div>
+
+      <div className="tech-item">
+        <SiDotnet className="icon" />
+        <span className="tech-name">.NET</span>
+      </div>
+
+      <div className="tech-item">
+        <FaPhp className="icon" />
+        <span className="tech-name">PHP</span>
       </div>
 
       <div className="tech-item">

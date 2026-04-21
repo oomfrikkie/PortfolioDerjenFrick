@@ -34,10 +34,10 @@
     "title": "StreamFlix",
     "description": "A full-stack streaming platform inspired by Netflix, offering user authentication, personalized watchlists, and API-driven content delivery.",
     "link": "https://github.com/oomfrikkie/StreamSyncAPI",
-    "image1": "/placeholder1024.png",
-    "image1description": "description1",
-    "image2": "/placeholder1024.png",
-    "image2description": "description2"
+    "image1": null,
+    "image1description": null,
+    "image2": null,
+    "image2description": null
   },
   {
     "slug": "bin-there-done-that",
@@ -54,10 +54,10 @@
     "title": "SSM Product Passport Tracking",
     "description": "A comprehensive group project focused on building a product passport tracking system. The application centralizes and structures product data, allowing users to monitor lifecycle information, sustainability metrics, and supply chain transparency. It implements UNS-inspired principles for data organization, making it easier for manufacturers, suppliers, and consumers to access and verify product details throughout the supply chain. The system is designed to improve traceability, accountability, and trust in product sourcing and movement across industries.",
     "link": "https://github.com/oomfrikkie/productpassportresit",
-    "image1": "/placeholder1024.png",
-    "image1description": "description1",
-    "image2": "/placeholder1024.png",
-    "image2description": "description2"
+    "image1": null,
+    "image1description": null,
+    "image2": null,
+    "image2description": null
   },
   {
     "slug": "nhl-stenden-explorer",

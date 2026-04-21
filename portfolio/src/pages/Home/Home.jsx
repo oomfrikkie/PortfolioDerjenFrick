@@ -165,10 +165,8 @@ export default function Home() {
           </a>
 
           <a
-            href="/Derjen_Frick_cv.pdf"
+            href="/derjen_frick_cv.pdf"
             download
-            target="_blank"
-            rel="noopener noreferrer"
             className="contact-item"
           >
             <FaFileAlt className="contact-icon" />
