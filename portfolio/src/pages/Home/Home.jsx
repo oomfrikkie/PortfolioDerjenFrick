@@ -12,21 +12,24 @@ export default function Home() {
     <section className="home-section">
       <div id="about" className="about-me-container">
         <div className="about-me-image-container">
-          <img src="me.jpg" alt="" />
+          <img src="me.jpg" alt="Derjen Frick" />
         </div>
 
         <div className="about-me-info-container">
           <div>
+            <h1 className="hero-name">Derjen Frick</h1>
+            <p className="hero-subtitle">Full-Stack Developer</p>
+
             <div>
               <p>
-                I’m a full-stack developer who enjoys building complete web
+                I'm a full-stack developer who enjoys building complete web
                 applications, from the frontend interface to the backend systems
                 that power them. I particularly enjoy backend development, where
                 I can design APIs, structure databases, and create scalable
                 application logic. I have experience working with technologies
-                such as JavaScript and TypeScript, and I’m comfortable
+                such as JavaScript and TypeScript, and I'm comfortable
                 developing backend systems using modern frameworks and tools.
-                I’m also knowledgeable in Java and have experience creating and
+                I'm also knowledgeable in Java and have experience creating and
                 managing containerized development environments using Docker. I
                 enjoy understanding how systems work as a whole and building
                 applications that are both functional and maintainable.
@@ -44,7 +47,6 @@ export default function Home() {
         <h2>Projects</h2>
 
         <div className="home-project-cards-container">
-                    
           <h3>Personal Projects</h3>
           <p>Below are projects I built for myself and learning purposes</p>
 
@@ -92,12 +94,12 @@ export default function Home() {
           />
 
           <ProjectCard
-                      title="NHL Stenden Explorer"
-                      description="A tool for students, staff, parents, and visitors to virtually explore the NHL Stenden Emmen campus. The web app offers interactive 360-degree images and important facility information, making campus navigation and discovery easy and accessible."
-                      image="nhlsexplore.png"
-                      slug="nhl-stenden-explorer"
-                      onClick={() => navigate("/projects/nhl-stenden-explorer")}
-                    />
+            title="NHL Stenden Explorer"
+            description="A tool for students, staff, parents, and visitors to virtually explore the NHL Stenden Emmen campus. The web app offers interactive 360-degree images and important facility information, making campus navigation and discovery easy and accessible."
+            image="nhlsexplore.png"
+            slug="nhl-stenden-explorer"
+            onClick={() => navigate("/projects/nhl-stenden-explorer")}
+          />
 
           <ProjectCard
             title="SSM Product Passport Tracking"
@@ -111,19 +113,21 @@ export default function Home() {
 
       <section id="background">
         <h2>Background</h2>
-        <p>
-          I was born and raised in South Africa, and after visiting the
-          Netherlands I decided to move there to pursue my studies. At the time
-          I was studying game development, which eventually led me to pursue a
-          broader path in IT and software development.
-        </p>
-        <p>
-          My interest in programming originally started through gaming and
-          curiosity about how games are built. That curiosity later expanded
-          into learning how to build software, websites, and applications.
-          Outside of development, I’m still a gamer at heart and also enjoy
-          playing guitar and piano.
-        </p>
+        <div className="background-card">
+          <p>
+            I was born and raised in South Africa, and after visiting the
+            Netherlands I decided to move there to pursue my studies. At the time
+            I was studying game development, which eventually led me to pursue a
+            broader path in IT and software development.
+          </p>
+          <p>
+            My interest in programming originally started through gaming and
+            curiosity about how games are built. That curiosity later expanded
+            into learning how to build software, websites, and applications.
+            Outside of development, I'm still a gamer at heart and also enjoy
+            playing guitar and piano.
+          </p>
+        </div>
       </section>
 
       <section id="contact" className="contact-section">
