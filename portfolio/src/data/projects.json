@@ -10,6 +10,16 @@
     "image2description": "Shopping cart view"
   },
   {
+    "slug": "vault",
+    "title": "Vault",
+    "description": "A personal budgeting app built to take control of your finances. You can set up and manage your budget, track expenses, and get a clear picture of where your money is going. The goal was to make budgeting feel less like a chore by keeping the interface clean and the data easy to read at a glance.",
+    "link": "#",
+    "image1": "/vaultbudget.png",
+    "image1description": "Budget setup page where you configure your monthly budget",
+    "image2": "/vaultexp.png",
+    "image2description": "Expenses page for tracking and reviewing spending"
+  },
+  {
     "slug": "task-app",
     "title": "Task App",
     "description": "A simple task manager I built as part of my Personal Development Plan to dive into mobile development. I went with React Native so I could learn how mobile apps connect to a backend. It does what you'd expect — you can add tasks, mark them done, and everything saves between sessions. Nothing groundbreaking, but it was a great way to learn the ins and outs of building something that runs on a phone while still having a proper backend.",

@@ -59,6 +59,14 @@ export default function Home() {
           />
 
           <ProjectCard
+            title="Vault"
+            description="A personal budgeting app built to take control of your finances. Set up your budget, track expenses, and see where your money is going — all in one clean interface."
+            image="vaultdb.png"
+            slug="vault"
+            onClick={() => navigate("/projects/vault")}
+          />
+
+          <ProjectCard
             title="Task App"
             description="A task management application developed as part of my Personal Development Plan to learn full-stack mobile development. Built with React Native and a backend, it allows users to create, manage, and persist tasks across sessions."
             image="taskapp.png"
