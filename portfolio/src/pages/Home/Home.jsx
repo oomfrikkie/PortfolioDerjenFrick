@@ -53,7 +53,7 @@ export default function Home() {
           <ProjectCard
             title="Ecommerce Website"
             description="A mock ecommerce platform built to demonstrate full-stack development, featuring backend-driven product management, order handling, and a functional cart system. It also includes a basic AI chatbot to assist users in finding products."
-            image="vite.svg"
+            image="ecomcover.png"
             slug="ecommerce-website"
             onClick={() => navigate("/projects/ecommerce-website")}
           />

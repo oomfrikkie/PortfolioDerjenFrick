@@ -4,10 +4,10 @@
     "title": "Ecommerce Website",
     "description": "A mock ecommerce platform I built to get hands-on experience with full-stack development. It's got all the basics you'd expect from an online store — products, a shopping cart, and order handling. I focused on making the backend do the heavy lifting, so product management and the cart system are all driven from there. I also threw in some OAuth authentication to learn how real login systems work. Nothing too fancy, but it really helped me understand how frontend and backend talk to each other in a real application.",
     "link": "https://github.com/oomfrikkie/EcommerceWebsite",
-    "image1": "/placeholder1024.png",
+    "image1": "/ecomproducts.png",
     "image1description": "Product browsing page",
-    "image2": "/placeholder1024.png",
-    "image2description": "Shopping cart view"
+    "image2": "/ecomai.png",
+    "image2description": "AI chatbot assistant"
   },
   {
     "slug": "vault",
