@@ -2,81 +2,148 @@
   {
     "slug": "ecommerce-website",
     "title": "Ecommerce Website",
-    "description": "A mock ecommerce platform I built to get hands-on experience with full-stack development. It's got all the basics you'd expect from an online store — products, a shopping cart, and order handling. I focused on making the backend do the heavy lifting, so product management and the cart system are all driven from there. I also threw in some OAuth authentication to learn how real login systems work. Nothing too fancy, but it really helped me understand how frontend and backend talk to each other in a real application.",
+    "type": "personal",
+    "summary": "Full-stack online store with a backend-driven catalog, cart and orders, OAuth login and an AI shopping assistant.",
+    "description": [
+      "A mock ecommerce platform I built to get hands-on with full-stack development. It covers the basics you'd expect from an online store: products, a shopping cart and order handling.",
+      "I kept the frontend thin and let the backend do the heavy lifting, so product management and the cart logic all live server-side. I also added OAuth login to understand how real-world auth flows work, plus a small AI chatbot that helps users find products."
+    ],
+    "highlights": ["Backend-driven catalog, cart & orders", "OAuth authentication", "AI chatbot for product search"],
+    "stack": [],
     "link": "https://github.com/oomfrikkie/EcommerceWebsite",
-    "image1": "/ecomproducts.png",
-    "image1description": "Product browsing page",
-    "image2": "/ecomai.png",
-    "image2description": "AI chatbot assistant"
+    "linkLabel": "View on GitHub",
+    "cover": "/ecomcover.png",
+    "images": [
+      { "src": "/ecomproducts.png", "caption": "Product browsing page" },
+      { "src": "/ecomai.png", "caption": "AI chatbot assistant" }
+    ]
   },
   {
     "slug": "vault",
     "title": "Vault",
-    "description": "A personal budgeting app built to take control of your finances. You can set up and manage your budget, track expenses, and get a clear picture of where your money is going. The goal was to make budgeting feel less like a chore by keeping the interface clean and the data easy to read at a glance.",
-    "link": "#",
-    "image1": "/vaultbudget.png",
-    "image1description": "Budget setup page where you configure your monthly budget",
-    "image2": "/vaultexp.png",
-    "image2description": "Expenses page for tracking and reviewing spending"
+    "type": "personal",
+    "summary": "Personal budgeting app: set a monthly budget, log expenses and see where the money actually goes.",
+    "description": [
+      "A personal budgeting app built to take control of your finances. You set up a monthly budget, track expenses as they happen, and get a clear picture of where your money is going.",
+      "The goal was to make budgeting feel less like a chore, so the focus was on a clean interface and data that's easy to read at a glance."
+    ],
+    "highlights": ["Monthly budget setup", "Expense tracking", "At-a-glance spending overview"],
+    "stack": [],
+    "link": null,
+    "linkLabel": null,
+    "cover": "/vaultdb.png",
+    "images": [
+      { "src": "/vaultbudget.png", "caption": "Budget setup" },
+      { "src": "/vaultexp.png", "caption": "Expense tracking" }
+    ]
   },
   {
     "slug": "task-app",
     "title": "Task App",
-    "description": "A simple task manager I built as part of my Personal Development Plan to dive into mobile development. I went with React Native so I could learn how mobile apps connect to a backend. It does what you'd expect — you can add tasks, mark them done, and everything saves between sessions. Nothing groundbreaking, but it was a great way to learn the ins and outs of building something that runs on a phone while still having a proper backend.",
+    "type": "personal",
+    "summary": "React Native task manager with its own backend, built to learn how mobile clients talk to an API.",
+    "description": [
+      "A task manager I built as part of my Personal Development Plan to get into mobile development. I went with React Native so I could learn how a mobile app connects to a backend.",
+      "You can add tasks, mark them done, and view your week at a glance. Everything is persisted server-side, so tasks survive between sessions and devices."
+    ],
+    "highlights": ["React Native client", "Own backend + persistence", "Weekly overview"],
+    "stack": ["React Native"],
     "link": "https://github.com/oomfrikkie/task-app",
-    "image1": "/taskappadd.png",
-    "image1description": "Add task screen",
-    "image2": "/taskappweekly.png",
-    "image2description": "Weekly overview screen"
+    "linkLabel": "View on GitHub",
+    "cover": "/taskapp.png",
+    "device": "mobile",
+    "images": [
+      { "src": "/taskappadd.png", "caption": "Adding a task" },
+      { "src": "/taskappweekly.png", "caption": "Weekly overview" }
+    ]
   },
   {
     "slug": "smart-time-registration",
     "title": "Smart Time Registration",
-    "description": "A time tracking tool that takes the hassle out of logging hours. Instead of manually entering everything, you can import your Outlook calendar and it'll automatically link meetings and events to projects. We hooked it up with Microsoft authentication so organizations can use it securely. The idea came from seeing how much time people waste just tracking their time — this makes it way easier. Built this one with a team at university.",
+    "type": "university",
+    "summary": "Imports Outlook calendars and automatically links meetings to projects, so nobody has to log hours by hand.",
+    "description": [
+      "A time-tracking tool that takes the hassle out of logging hours. Instead of entering everything manually, you import your Outlook calendar and the app links meetings and events to the right projects.",
+      "We integrated Microsoft authentication so organisations can roll it out securely. The idea came from seeing how much time people waste just tracking their time. Built with a team at university."
+    ],
+    "highlights": ["Outlook calendar import", "Automatic event → project matching", "Microsoft authentication", "Admin project overview"],
+    "stack": [],
     "link": "https://github.com/oomfrikkie/SmartTimeRegistration",
-    "image1": "/str1.png",
-    "image1description": "Home page showing imported calendar data",
-    "image2": "/str2.png",
-    "image2description": "Admin view of all projects"
+    "linkLabel": "View on GitHub",
+    "cover": "/strcover.png",
+    "images": [
+      { "src": "/str1.png", "caption": "Home page with imported calendar data" },
+      { "src": "/str2.png", "caption": "Admin view of all projects" }
+    ]
   },
   {
     "slug": "streamflix",
     "title": "StreamFlix",
-    "description": "A Netflix-inspired streaming platform I built to really dig into backend development. It handles user accounts, lets you build a watchlist, and serves up content through a proper API. I wanted to understand how streaming services work behind the scenes — things like authentication, managing user data, and keeping track of what people want to watch. The backend was the main focus here.",
+    "type": "university",
+    "summary": "Backend for a streaming platform: user accounts, auth, watchlists and content served through a REST API.",
+    "description": [
+      "A Netflix-style streaming platform built to dig into backend development. It handles user accounts, lets users build a watchlist, and serves content through a proper API.",
+      "I wanted to understand how streaming services work behind the scenes: authentication, managing user data, and keeping track of what people want to watch. The backend was the main focus."
+    ],
+    "highlights": ["User accounts & authentication", "Watchlists", "REST API design"],
+    "stack": [],
     "link": "https://github.com/oomfrikkie/StreamSyncAPI",
-    "image1": null,
-    "image1description": null,
-    "image2": null,
-    "image2description": null
+    "linkLabel": "View on GitHub",
+    "cover": "/streamsync.png",
+    "images": []
   },
   {
     "slug": "bin-there-done-that",
     "title": "Bin There, Done That",
-    "description": "An educational web app that teaches kids about recycling through mini-games. We wanted to make learning about waste separation actually fun, so we built interactive games where players sort trash into the right bins. There's even an AI feature that helps identify what type of waste something is. It's simple, colorful, and hopefully gets the message across in a way that sticks. This was a group project focused on making sustainability education more engaging.",
+    "type": "university",
+    "summary": "Teaches kids to recycle through sorting mini-games, with AI that identifies what kind of waste something is.",
+    "description": [
+      "An educational web app that teaches kids about recycling through mini-games. We wanted waste separation to actually be fun, so players sort trash into the right bins in a set of interactive games.",
+      "There's also an AI feature that identifies what type of waste an item is. Simple, colourful, and built so the lesson sticks. A group project focused on making sustainability education more engaging."
+    ],
+    "highlights": ["Sorting mini-games", "AI waste identification", "Live and deployed"],
+    "stack": [],
     "link": "https://binthere-donethat.vercel.app/",
-    "image1": "/binthereminigames.png",
-    "image1description": "Mini-games for recycling education",
-    "image2": "/binthereaisorter.png",
-    "image2description": "AI-powered trash sorting feature"
-  },
-  {
-    "slug": "ssm-product-passport-tracking",
-    "title": "SSM Product Passport Tracking",
-    "description": "A product tracking system we built for a university group project. The idea was to create a 'passport' for products — kind of like a digital record that follows an item through the supply chain. You can see where a product came from, check its sustainability credentials, and track where it's been. We used UNS-inspired data principles to keep everything organized and traceable. It's the sort of thing that could help with supply chain transparency, letting manufacturers, suppliers, and customers all verify product details from one place.",
-    "link": "https://github.com/oomfrikkie/productpassportresit",
-    "image1": null,
-    "image1description": null,
-    "image2": null,
-    "image2description": null
+    "linkLabel": "Visit live site",
+    "cover": "/bintheredonethat.png",
+    "images": [
+      { "src": "/binthereminigames.png", "caption": "Recycling mini-games" },
+      { "src": "/binthereaisorter.png", "caption": "AI-powered waste sorter" }
+    ]
   },
   {
     "slug": "nhl-stenden-explorer",
     "title": "NHL Stenden Explorer",
-    "description": "A virtual campus tour app for NHL Stenden's Emmen campus. We built this so students, staff, parents, and visitors could explore the campus without actually being there. The coolest part is the 360-degree photo viewer — we went around campus with a 360 camera and integrated all the photos so people can look around like they're actually standing there. There's also an FAQ section with all the info people usually need about the campus facilities. Built this with a team, and it's designed to make campus info accessible to anyone, anytime.",
+    "type": "university",
+    "summary": "Virtual tour of the Emmen campus with 360° photos we shot ourselves, plus an FAQ for visitors.",
+    "description": [
+      "A virtual campus tour for NHL Stenden's Emmen campus, so students, staff, parents and visitors can explore it without being there.",
+      "The core is a 360° photo viewer: we walked the campus with a 360 camera and integrated the shots so you can look around as if you're standing there. An FAQ section covers what people usually want to know about the facilities. Built with a team."
+    ],
+    "highlights": ["360° photo viewer", "Self-captured campus imagery", "Visitor FAQ"],
+    "stack": [],
     "link": "https://github.com/KyanJeuring/NHLStendenExplorer",
-    "image1": "/nhls360.png",
-    "image1description": "360-degree photo viewer for virtual campus exploration",
-    "image2": "/nhlsfaq.png",
-    "image2description": "FAQ page with campus information"
+    "linkLabel": "View on GitHub",
+    "cover": "/nhlsexplore.png",
+    "images": [
+      { "src": "/nhls360.png", "caption": "360° campus viewer" },
+      { "src": "/nhlsfaq.png", "caption": "Campus FAQ" }
+    ]
+  },
+  {
+    "slug": "ssm-product-passport-tracking",
+    "title": "SSM Product Passport",
+    "type": "university",
+    "summary": "A digital passport that follows a product through the supply chain: origin, sustainability data and history.",
+    "description": [
+      "A product tracking system built for a university group project. The idea is a 'passport' for products: a digital record that follows an item through the supply chain.",
+      "You can see where a product came from, check its sustainability credentials, and trace where it's been. We used UNS-inspired data principles to keep everything structured and traceable, so manufacturers, suppliers and customers can all verify details from one place."
+    ],
+    "highlights": ["Supply-chain traceability", "Sustainability data per product", "UNS-inspired data model"],
+    "stack": [],
+    "link": "https://github.com/oomfrikkie/productpassportresit",
+    "linkLabel": "View on GitHub",
+    "cover": "/ssmproduct.png",
+    "images": []
   }
 ]

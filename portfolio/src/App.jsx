@@ -1,22 +1,44 @@
-import { useState } from 'react'
-import './App.css'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 
-import NavBar from './components/navbar/NavBar'
-import Home from './pages/Home/Home'
-import ProjectDetail from './pages/ProjectDetail/ProjectDetail'
+import Nav from './components/Nav'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import ProjectDetail from './pages/ProjectDetail'
+import NotFound from './pages/NotFound'
 
-function App() {
-  return (
-    <>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/projects/:slug" element={<ProjectDetail />} />
-      </Routes>
-    </>
-  );
+// Scroll to #section on hash links, otherwise jump to top on route change
+function ScrollManager() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.getElementById(hash.slice(1))
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+        return
+      }
+    }
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
+
+  return null
 }
 
-export default App
+export default function App() {
+  return (
+    <>
+      <ScrollManager />
+      <Nav />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+    </>
+  )
+}
