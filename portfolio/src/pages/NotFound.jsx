@@ -7,7 +7,7 @@ export default function NotFound() {
       <h1 className="section-title" style={{ margin: '1rem 0 2rem' }}>
         This page doesn't exist.
       </h1>
-      <Link to="/" className="btn">← Back home</Link>
+      <Link to="/" className="btn">Back home</Link>
     </section>
   )
 }

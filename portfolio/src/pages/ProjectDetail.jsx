@@ -22,11 +22,11 @@ export default function ProjectDetail() {
 
   return (
     <article className="detail container" key={project.slug}>
-      <Link to="/#work" className="detail-back mono">← All work</Link>
+      <Link to="/#work" className="detail-back">‹ All projects</Link>
 
       <header className="detail-head enter">
         <p className="label">
-          {String(index + 1).padStart(2, '0')} — {typeLabel}
+          {typeLabel}
         </p>
         <h1 className="detail-title">{project.title}</h1>
         <p className="detail-lede">{project.summary}</p>
@@ -60,7 +60,7 @@ export default function ProjectDetail() {
 
           {project.link && (
             <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              {project.linkLabel || 'View project'} ↗
+              {project.linkLabel || 'View project'}
             </a>
           )}
         </aside>
@@ -74,8 +74,8 @@ export default function ProjectDetail() {
                 <img src={img.src} alt={img.caption || `${project.title} screenshot`} loading={i ? 'lazy' : 'eager'} />
               </div>
               {img.caption && (
-                <figcaption className="mono">
-                  <span>Fig. {i + 1}</span> {img.caption}
+                <figcaption>
+                  {img.caption}
                 </figcaption>
               )}
             </figure>

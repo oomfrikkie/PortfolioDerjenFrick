@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import projects from '../data/projects.json'
-import ProjectRow from '../components/ProjectRow'
+import ProjectCard from '../components/ProjectCard'
 import './home.css'
 
 const FILTERS = [
@@ -14,6 +14,7 @@ const TOOLKIT = [
   { group: 'Backend', items: ['NestJS', '.NET', 'TypeORM', 'REST APIs', 'JWT / OAuth'] },
   { group: 'Frontend', items: ['React', 'React Native', 'Vite', 'Tailwind CSS'] },
   { group: 'Data & infra', items: ['PostgreSQL', 'MariaDB', 'Docker'] },
+  { group: 'Game engines', items: ['Unity', 'Unreal Engine'] },
 ]
 
 const EMAIL = 'derjen.frick@gmail.com'
@@ -21,50 +22,45 @@ const EMAIL = 'derjen.frick@gmail.com'
 export default function Home() {
   const [filter, setFilter] = useState('all')
   const visible = filter === 'all' ? projects : projects.filter((p) => p.type === filter)
-  const count = (key) => (key === 'all' ? projects.length : projects.filter((p) => p.type === key).length)
 
   return (
     <>
       {/* ── Hero ─────────────────────────────────────── */}
       <section className="hero container">
-        <div className="hero-text enter">
-          <p className="hero-status mono">
-            <span className="dot" aria-hidden="true" />
-            Full-stack developer · Netherlands
-          </p>
+        <img
+          className="hero-photo enter"
+          src="/me.jpg"
+          alt="Portrait of Derjen Frick"
+          width="880"
+          height="1100"
+        />
 
-          <h1 className="hero-title">
-            Derjen Frick.
-            <span> I build web apps from the database up.</span>
-          </h1>
+        <h1 className="hero-title enter" style={{ animationDelay: '0.05s' }}>
+          Derjen Frick.
+        </h1>
 
-          <p className="hero-intro">
-            Backend-leaning full-stack developer and IT student at NHL Stenden. I like
-            designing APIs, modelling data and containerising things, then building a clean
-            frontend on top.
-          </p>
+        <p className="hero-lede enter" style={{ animationDelay: '0.1s' }}>
+          I build APIs, databases, and the apps on top of them.
+        </p>
 
-          <div className="hero-actions">
-            <a href="#work" className="btn btn-primary">See my work ↓</a>
-            <a href="/Derjen_Frick_cv.pdf" className="btn" target="_blank" rel="noopener noreferrer">
-              Download CV
-            </a>
-          </div>
+        <p className="hero-intro enter" style={{ animationDelay: '0.15s' }}>
+          Full-stack developer and IT student at NHL Stenden, with a game dev background in
+          Unity and Unreal Engine.
+        </p>
+
+        <div className="hero-actions enter" style={{ animationDelay: '0.2s' }}>
+          <a href="#work" className="btn btn-primary">See my work</a>
+          <a href="/Derjen_Frick_cv.pdf" className="btn" target="_blank" rel="noopener noreferrer">
+            Download CV
+          </a>
         </div>
-
-        <figure className="hero-photo enter" style={{ animationDelay: '0.1s' }}>
-          <img src="/me.jpg" alt="Portrait of Derjen Frick" width="880" height="1100" />
-        </figure>
       </section>
 
       {/* ── Work ─────────────────────────────────────── */}
       <section id="work" className="section">
         <div className="container">
           <div className="section-head">
-            <h2 className="section-title">
-              <span className="label">01 — Work</span>
-              Selected projects
-            </h2>
+            <h2 className="section-title">Projects.</h2>
 
             <div className="filters" role="tablist" aria-label="Filter projects">
               {FILTERS.map((f) => (
@@ -76,35 +72,31 @@ export default function Home() {
                   onClick={() => setFilter(f.key)}
                 >
                   {f.label}
-                  <span className="mono">{count(f.key)}</span>
                 </button>
               ))}
             </div>
           </div>
 
-          <ul className="rows">
+          <ul className="cards">
             {visible.map((p) => (
-              <ProjectRow key={p.slug} project={p} index={projects.indexOf(p)} />
+              <ProjectCard key={p.slug} project={p} />
             ))}
           </ul>
         </div>
       </section>
 
       {/* ── About ────────────────────────────────────── */}
-      <section id="about" className="section">
+      <section id="about" className="section section-alt">
         <div className="container about">
           <div>
-            <h2 className="section-title">
-              <span className="label">02 — About</span>
-              From game dev to backend.
-            </h2>
+            <h2 className="section-title">From game dev to backend.</h2>
 
             <div className="about-text">
               <p>
                 I grew up in South Africa and moved to the Netherlands to study. I started out in
-                game development, because I wanted to know how the games I played were actually
-                built. That curiosity spread to everything else: websites, APIs, databases and
-                how it all fits together.
+                game development, building in Unity and Unreal Engine, because I wanted to know
+                how the games I played were actually made. That curiosity spread to everything
+                else: websites, APIs, databases and how it all fits together.
               </p>
               <p>
                 These days I'm studying IT and spend most of my time on the backend: structuring
@@ -118,7 +110,7 @@ export default function Home() {
           </div>
 
           <div className="toolkit">
-            <p className="label">Toolkit</p>
+            <p className="toolkit-title">Toolkit</p>
             <dl>
               {TOOLKIT.map((t) => (
                 <div key={t.group} className="toolkit-row">
@@ -134,27 +126,26 @@ export default function Home() {
       {/* ── Contact ──────────────────────────────────── */}
       <section id="contact" className="section">
         <div className="container contact">
-          <span className="label">03 — Contact</span>
-          <h2 className="contact-title">
-            Got a role, a project or a question?
-            <span> Let's talk.</span>
-          </h2>
+          <h2 className="section-title">Let's talk.</h2>
+          <p className="contact-sub">
+            Got a role, a project or a question? Email is the fastest way to reach me.
+          </p>
 
-          <a href={`mailto:${EMAIL}`} className="contact-email">
-            {EMAIL} <span aria-hidden="true">↗</span>
+          <a href={`mailto:${EMAIL}`} className="contact-email link">
+            {EMAIL} ›
           </a>
 
           <ul className="contact-links">
             <li>
               <a href="https://github.com/oomfrikkie" target="_blank" rel="noopener noreferrer">
                 <span className="label">GitHub</span>
-                <span>@oomfrikkie ↗</span>
+                <span>@oomfrikkie</span>
               </a>
             </li>
             <li>
               <a href="https://www.linkedin.com/in/derjen-frick-775714262/" target="_blank" rel="noopener noreferrer">
                 <span className="label">LinkedIn</span>
-                <span>Derjen Frick ↗</span>
+                <span>Derjen Frick</span>
               </a>
             </li>
             <li>
@@ -166,7 +157,7 @@ export default function Home() {
             <li>
               <a href="/Derjen_Frick_cv.pdf" download>
                 <span className="label">CV</span>
-                <span>Download PDF ↓</span>
+                <span>Download PDF</span>
               </a>
             </li>
           </ul>
