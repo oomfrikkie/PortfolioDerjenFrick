@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -20,6 +20,7 @@
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -52,6 +53,13 @@
   background: var(--accent-hover);
 }
 
-@media (max-width: 400px) {
-  .nav-links { gap: 1rem; }
+@media (max-width: 480px) {
+  .nav-links { gap: 1.1rem; }
+  /* CV is also in the hero and contact section */
+  .nav-links .nav-cv { display: none; }
+}
+
+@media (max-width: 350px) {
+  .nav-logo { font-size: 0.86rem; }
+  .nav-links { gap: 0.65rem; font-size: 0.76rem; }
 }

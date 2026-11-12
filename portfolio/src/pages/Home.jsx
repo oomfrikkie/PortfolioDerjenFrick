@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import projects from '../data/projects.json'
+import PROJECT_TYPES from '../data/projectTypes'
 import ProjectCard from '../components/ProjectCard'
+import BlenderSection from '../components/BlenderSection'
+import useDocumentTitle from '../hooks/useDocumentTitle'
 import './home.css'
 
+// Only offer a filter for types that actually have projects
 const FILTERS = [
   { key: 'all', label: 'All' },
-  { key: 'personal', label: 'Personal' },
-  { key: 'university', label: 'University' },
+  ...Object.entries(PROJECT_TYPES)
+    .filter(([key]) => projects.some((p) => p.type === key))
+    .map(([key, type]) => ({ key, label: type.filter })),
 ]
 
 const TOOLKIT = [
@@ -20,6 +25,7 @@ const TOOLKIT = [
 const EMAIL = 'derjen.frick@gmail.com'
 
 export default function Home() {
+  useDocumentTitle()
   const [filter, setFilter] = useState('all')
   const visible = filter === 'all' ? projects : projects.filter((p) => p.type === filter)
 
@@ -29,10 +35,10 @@ export default function Home() {
       <section className="hero container">
         <img
           className="hero-photo enter"
-          src="/me.jpg"
+          src="/avatar.webp"
           alt="Portrait of Derjen Frick"
-          width="880"
-          height="1100"
+          width="104"
+          height="104"
         />
 
         <h1 className="hero-title enter" style={{ animationDelay: '0.05s' }}>
@@ -49,32 +55,34 @@ export default function Home() {
         </p>
 
         <div className="hero-actions enter" style={{ animationDelay: '0.2s' }}>
-          <a href="#work" className="btn btn-primary">See my work</a>
+          <a href="#projects" className="btn btn-primary">See my projects</a>
           <a href="/Derjen_Frick_cv.pdf" className="btn" target="_blank" rel="noopener noreferrer">
             Download CV
           </a>
         </div>
       </section>
 
-      {/* ── Work ─────────────────────────────────────── */}
-      <section id="work" className="section">
+      {/* ── Projects ─────────────────────────────────── */}
+      <section id="projects" className="section">
         <div className="container">
           <div className="section-head">
             <h2 className="section-title">Projects.</h2>
 
-            <div className="filters" role="tablist" aria-label="Filter projects">
-              {FILTERS.map((f) => (
-                <button
-                  key={f.key}
-                  role="tab"
-                  aria-selected={filter === f.key}
-                  className={`filter ${filter === f.key ? 'is-active' : ''}`}
-                  onClick={() => setFilter(f.key)}
-                >
-                  {f.label}
-                </button>
-              ))}
-            </div>
+            {FILTERS.length > 2 && (
+              <div className="filters" role="group" aria-label="Filter projects">
+                {FILTERS.map((f) => (
+                  <button
+                    key={f.key}
+                    type="button"
+                    aria-pressed={filter === f.key}
+                    className={`filter ${filter === f.key ? 'is-active' : ''}`}
+                    onClick={() => setFilter(f.key)}
+                  >
+                    {f.label}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <ul className="cards">
@@ -123,6 +131,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Blender (only renders when src/assets/blender has images) ── */}
+      <BlenderSection />
+
       {/* ── Contact ──────────────────────────────────── */}
       <section id="contact" className="section">
         <div className="container contact">
@@ -137,28 +148,24 @@ export default function Home() {
 
           <ul className="contact-links">
             <li>
-              <a href="https://github.com/oomfrikkie" target="_blank" rel="noopener noreferrer">
-                <span className="label">GitHub</span>
-                <span>@oomfrikkie</span>
+              <span className="label">GitHub</span>
+              <a className="link" href="https://github.com/oomfrikkie" target="_blank" rel="noopener noreferrer">
+                @oomfrikkie
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/derjen-frick-775714262/" target="_blank" rel="noopener noreferrer">
-                <span className="label">LinkedIn</span>
-                <span>Derjen Frick</span>
+              <span className="label">LinkedIn</span>
+              <a className="link" href="https://www.linkedin.com/in/derjen-frick-775714262/" target="_blank" rel="noopener noreferrer">
+                Derjen Frick
               </a>
             </li>
             <li>
-              <a href="tel:+31686133826">
-                <span className="label">Phone</span>
-                <span>+31 6 8613 3826</span>
-              </a>
+              <span className="label">Phone</span>
+              <a className="link" href="tel:+31686133826">+31 6 8613 3826</a>
             </li>
             <li>
-              <a href="/Derjen_Frick_cv.pdf" download>
-                <span className="label">CV</span>
-                <span>Download PDF</span>
-              </a>
+              <span className="label">CV</span>
+              <a className="link" href="/Derjen_Frick_cv.pdf" download>Download PDF</a>
             </li>
           </ul>
         </div>

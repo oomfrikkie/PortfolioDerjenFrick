@@ -80,6 +80,11 @@ ul {
   border-radius: 6px;
 }
 
+/* Stop the page scrolling behind an open dialog */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 /* ── Shared building blocks ───────────────────────────── */
 
 .container {
@@ -106,6 +111,21 @@ ul {
 
 .section-alt {
   background: var(--bg-alt);
+}
+
+/* Continues the grey band of the section above it, split by a hairline */
+.section-joined {
+  position: relative;
+  padding-top: clamp(3.5rem, 8vw, 5.5rem);
+}
+
+.section-joined::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+  right: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+  border-top: 1px solid var(--line-strong);
 }
 
 .section-head {
@@ -156,6 +176,20 @@ ul {
 .btn-primary:hover {
   background: var(--accent-hover);
   border-color: var(--accent-hover);
+}
+
+/* A phone screenshot gets a drawn bezel. The image is the screen only. */
+.phone {
+  padding: 2.6%;
+  background: #1d1d1f;
+  border-radius: 17.5% / 8.2%;
+  box-shadow: 0 0 0 1px #000, 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+.phone img {
+  width: 100%;
+  height: auto;
+  border-radius: 15.5% / 7.2%;
 }
 
 .link {

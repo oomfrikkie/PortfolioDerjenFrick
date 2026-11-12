@@ -1,36 +1,82 @@
 import { Link, useParams } from 'react-router-dom'
 import projects from '../data/projects.json'
+import PROJECT_TYPES from '../data/projectTypes'
+import useDocumentTitle from '../hooks/useDocumentTitle'
 import NotFound from './NotFound'
 import './projectdetail.css'
+
+// Screenshots narrower than this are shown at their real size instead of stretched
+const SMALL_IMAGE = 900
+
+function Shot({ image, title, eager }) {
+  const isSmall = image.width < SMALL_IMAGE
+
+  return (
+    <figure className="shot">
+      <div className={`shot-frame ${isSmall ? 'is-small' : ''}`}>
+        <img
+          src={image.src}
+          alt={image.caption || `${title} screenshot`}
+          width={image.width}
+          height={image.height}
+          loading={eager ? 'eager' : 'lazy'}
+          style={isSmall ? { maxWidth: image.width } : undefined}
+        />
+      </div>
+      {image.caption && <figcaption>{image.caption}</figcaption>}
+    </figure>
+  )
+}
 
 export default function ProjectDetail() {
   const { slug } = useParams()
   const index = projects.findIndex((p) => p.slug === slug)
-  if (index === -1) return <NotFound />
-
   const project = projects[index]
-  const next = projects[(index + 1) % projects.length]
-  const isMobile = project.device === 'mobile'
-  const typeLabel = project.type === 'university' ? 'University · Team project' : 'Personal project'
+  useDocumentTitle(project?.title ?? 'Not found')
 
-  // Fall back to the cover image when there are no screenshots
-  const images = project.images.length
-    ? project.images
-    : project.cover
-      ? [{ src: project.cover, caption: null }]
-      : []
+  if (!project) return <NotFound />
+
+  const next = projects[(index + 1) % projects.length]
+  const isPhone = project.device === 'mobile'
+  const [hero, ...rest] = project.images
 
   return (
     <article className="detail container" key={project.slug}>
-      <Link to="/#work" className="detail-back">‹ All projects</Link>
+      <Link to="/#projects" className="detail-back">‹ All projects</Link>
 
       <header className="detail-head enter">
-        <p className="label">
-          {typeLabel}
-        </p>
+        <p className="label">{PROJECT_TYPES[project.type]?.detail}</p>
         <h1 className="detail-title">{project.title}</h1>
         <p className="detail-lede">{project.summary}</p>
+
+        {project.link && (
+          <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            {project.linkLabel || 'View project'}
+          </a>
+        )}
       </header>
+
+      {/* Lead visual: one big screenshot, or the phone screens side by side */}
+      {isPhone ? (
+        <div className="phones">
+          {project.images.map((img, i) => (
+            <figure key={img.src}>
+              <div className="phone">
+                <img
+                  src={img.src}
+                  alt={img.caption || `${project.title} screen`}
+                  width={img.width}
+                  height={img.height}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                />
+              </div>
+              {img.caption && <figcaption>{img.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      ) : (
+        hero && <Shot image={hero} title={project.title} eager />
+      )}
 
       <div className="detail-grid">
         <div className="detail-body">
@@ -51,34 +97,19 @@ export default function ProjectDetail() {
 
           {project.stack?.length > 0 && (
             <div>
-              <p className="label">Stack</p>
+              <p className="label">Built with</p>
               <ul className="detail-tags">
-                {project.stack.map((s) => <li key={s} className="mono">{s}</li>)}
+                {project.stack.map((s) => <li key={s}>{s}</li>)}
               </ul>
             </div>
-          )}
-
-          {project.link && (
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              {project.linkLabel || 'View project'}
-            </a>
           )}
         </aside>
       </div>
 
-      {images.length > 0 && (
-        <div className={`detail-gallery ${isMobile ? 'is-mobile' : ''}`}>
-          {images.map((img, i) => (
-            <figure key={img.src}>
-              <div className="detail-frame">
-                <img src={img.src} alt={img.caption || `${project.title} screenshot`} loading={i ? 'lazy' : 'eager'} />
-              </div>
-              {img.caption && (
-                <figcaption>
-                  {img.caption}
-                </figcaption>
-              )}
-            </figure>
+      {!isPhone && rest.length > 0 && (
+        <div className="detail-gallery">
+          {rest.map((img) => (
+            <Shot key={img.src} image={img} title={project.title} />
           ))}
         </div>
       )}
@@ -86,7 +117,7 @@ export default function ProjectDetail() {
       <Link to={`/projects/${next.slug}`} className="detail-next">
         <span className="label">Next project</span>
         <span className="detail-next-title">
-          {next.title} <span aria-hidden="true">→</span>
+          {next.title} <span aria-hidden="true">›</span>
         </span>
       </Link>
     </article>

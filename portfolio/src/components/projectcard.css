@@ -7,8 +7,12 @@
   overflow: hidden;
 }
 
+.card:focus-visible {
+  border-radius: 28px;
+}
+
 .card-text {
-  padding: 2.25rem 2.25rem 1.75rem;
+  padding: 2.25rem 2.25rem 2rem;
 }
 
 .card-title {
@@ -23,6 +27,7 @@
   color: var(--text-2);
   font-size: 1rem;
   max-width: 44ch;
+  min-height: 3em; /* two lines, so every card lines up */
   margin-bottom: 0.9rem;
 }
 
@@ -30,15 +35,16 @@
   text-decoration: underline;
 }
 
+/* Screenshot: shown from its top-left corner, never cropped on the left */
 .card-media {
   margin: auto 2.25rem 0;
-  aspect-ratio: 16 / 10;
-  border-radius: 14px 14px 0 0;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px 12px 0 0;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 14px 36px rgba(0, 0, 0, 0.1);
+  transform: translateY(8px);
   transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
-  transform: translateY(6px);
 }
 
 .card:hover .card-media {
@@ -49,16 +55,33 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: left top;
 }
 
-.card-media img.is-mobile {
-  object-position: center 15%;
+/* Mobile projects: a phone that runs off the bottom of the card */
+.card-media.is-phone {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card-media.is-phone .phone {
+  width: 46%;
+}
+
+.card-media.is-phone img {
+  height: auto;
+  object-fit: fill;
 }
 
 @media (max-width: 560px) {
   .card { border-radius: 22px; }
-  .card-text { padding: 1.5rem 1.5rem 1.25rem; }
+  .card:focus-visible { border-radius: 22px; }
+  .card-text { padding: 1.5rem 1.5rem 1.5rem; }
   .card-media { margin: auto 1.5rem 0; }
   .card-title { font-size: 1.45rem; }
+  .card-summary { min-height: 0; }
 }
