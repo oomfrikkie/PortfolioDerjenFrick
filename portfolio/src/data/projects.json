@@ -26,8 +26,27 @@
     ],
     "link": "https://github.com/oomfrikkie/AiElective",
     "linkLabel": "View on GitHub",
-    "cover": null,
-    "images": []
+    "cover": "/projects/hettie-cover.webp",
+    "images": [
+      {
+        "src": "/projects/hettie-conversation.webp",
+        "caption": "Role-play in a café, with grammar corrections",
+        "width": 1920,
+        "height": 1142
+      },
+      {
+        "src": "/projects/hettie-results.webp",
+        "caption": "Lesson results: pattern AI and teacher tips per mistake",
+        "width": 1920,
+        "height": 1140
+      },
+      {
+        "src": "/projects/hettie-tutor.webp",
+        "caption": "Tutor chat with Hettie",
+        "width": 1920,
+        "height": 1138
+      }
+    ]
   },
   {
     "slug": "ecommerce-website",
