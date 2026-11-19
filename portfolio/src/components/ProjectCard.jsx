@@ -15,7 +15,7 @@ export default function ProjectCard({ project }) {
           <span className="card-more link">Learn more ›</span>
         </div>
 
-        {isPhone ? (
+        {!project.cover ? null : isPhone ? (
           <div className="card-media is-phone">
             <div className="phone">
               <img src={project.cover} alt="" loading="lazy" />

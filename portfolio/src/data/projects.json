@@ -1,5 +1,35 @@
 [
   {
+    "slug": "hettie-ai",
+    "title": "HettieAI",
+    "type": "university",
+    "summary": "Dutch tutor app: a de/het model we trained, plus Gemini for spoken role-play.",
+    "description": [
+      "HettieAI helps English speakers learn Dutch at A1 and A2 level. It has three parts: a de/het quiz, role-play conversations you can type or speak, and a chat with Hettie, a tutor who answers questions about learning Dutch.",
+      "It uses two kinds of AI. The first is our own: five small neural networks (a bidirectional GRU in PyTorch) trained on about 30,600 Dutch nouns from Wiktionary. They vote on whether a word takes de or het from its spelling alone, and the quiz uses that to tell you whether a mistake follows a pattern or is one to memorise.",
+      "The second is Gemini. It plays characters in 14 everyday scenarios, like ordering in a café or seeing a doctor, replies in Dutch, corrects your grammar, comments on your pronunciation from your recording and reads its answers out loud. The FastAPI backend and React frontend both run in Docker."
+    ],
+    "highlights": [
+      "Own de/het model: 5-network GRU ensemble",
+      "Trained on ~30,600 Dutch nouns",
+      "Voice input with pronunciation feedback",
+      "14 role-play scenarios across A1 and A2",
+      "Past mistakes come back first"
+    ],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "PyTorch",
+      "Gemini API",
+      "React",
+      "Docker"
+    ],
+    "link": "https://github.com/oomfrikkie/AiElective",
+    "linkLabel": "View on GitHub",
+    "cover": null,
+    "images": []
+  },
+  {
     "slug": "ecommerce-website",
     "title": "Ecommerce Website",
     "type": "personal",
