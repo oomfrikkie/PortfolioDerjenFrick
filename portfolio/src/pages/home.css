@@ -49,6 +49,16 @@
   margin-top: 2rem;
 }
 
+/* Phones: two equal, full-width buttons */
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+  .hero-actions .btn { justify-content: center; }
+}
+
 /* ── Projects ───────────────────────────────────────── */
 
 .filters {
@@ -151,9 +161,11 @@
   .about { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 420px) {
-  .toolkit { padding: 1.5rem 1.25rem 0.75rem; }
-  .toolkit-row { grid-template-columns: 6.25rem 1fr; }
+@media (max-width: 480px) {
+  .toolkit { padding: 1.5rem 1.25rem 0.75rem; border-radius: 20px; }
+  /* Label above the list, so nothing wraps into a narrow column */
+  .toolkit-row { grid-template-columns: 1fr; gap: 0.15rem; }
+  .toolkit-row dt { font-size: 0.82rem; }
 }
 
 /* ── Contact ────────────────────────────────────────── */
@@ -179,7 +191,7 @@
 .contact-links {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem 1rem;
+  gap: 1.25rem 1rem;
   margin-top: 4rem;
   padding-top: 1.75rem;
   border-top: 1px solid var(--line);
@@ -188,8 +200,12 @@
 .contact-links li {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  align-items: center;
   font-size: 0.95rem;
+}
+
+.contact-links a {
+  padding: 0.35rem 0.25rem;
 }
 
 @media (max-width: 640px) {

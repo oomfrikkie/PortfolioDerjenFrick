@@ -1,0 +1,128 @@
+.viewer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(245, 245, 247, 0.9);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  color: var(--text);
+}
+
+.viewer::backdrop {
+  background: none;
+}
+
+.viewer-stage {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 4.5rem 4.5rem 2rem;
+}
+
+.viewer-figure {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: center;
+  max-width: 100%;
+}
+
+.viewer-figure img {
+  max-width: 100%;
+  max-height: calc(100dvh - 9rem);
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.viewer-figure figcaption {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.viewer-hint {
+  display: none;
+  color: var(--text-3);
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+
+/* Wide screenshot on a portrait phone: it's small, so say it can be zoomed */
+@media (hover: none) and (orientation: portrait) {
+  .viewer-figure.is-wide .viewer-hint { display: block; }
+}
+
+.viewer-count {
+  color: var(--text-3);
+  font-weight: 400;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.viewer-btn {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.07);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.viewer-btn:hover {
+  background: rgba(0, 0, 0, 0.13);
+}
+
+.viewer-close {
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+}
+
+.viewer-prev,
+.viewer-next {
+  top: 50%;
+  transform: translateY(-50%);
+  padding-bottom: 3px;
+}
+
+.viewer-prev { left: 1rem; }
+.viewer-next { right: 1rem; }
+
+/* Phones: image uses the full width, arrows move under it */
+@media (max-width: 640px) {
+  .viewer-stage { padding: 4rem 0.75rem 6rem; }
+  .viewer-figure img {
+    max-height: calc(100dvh - 14rem);
+    border-radius: 8px;
+  }
+  .viewer-figure figcaption {
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  .viewer-prev,
+  .viewer-next {
+    top: auto;
+    bottom: 1.25rem;
+    transform: none;
+  }
+  .viewer-prev { left: calc(50% - 54px); }
+  .viewer-next { right: calc(50% - 54px); }
+}

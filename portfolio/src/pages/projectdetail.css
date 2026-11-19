@@ -1,10 +1,11 @@
 .detail {
-  padding-top: 1.75rem;
+  padding-top: 1.1rem;
   padding-bottom: clamp(3rem, 8vw, 5rem);
 }
 
 .detail-back {
   display: inline-block;
+  padding: 0.6rem 0;
   font-size: 0.9rem;
   color: var(--link);
 }
@@ -48,10 +49,40 @@
 /* ── Screenshots ───────────────────────────────────── */
 
 .shot-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
   border-radius: 20px;
   overflow: hidden;
   background: var(--bg-alt);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  cursor: zoom-in;
+}
+
+.shot-frame:focus-visible {
+  border-radius: 20px;
+}
+
+/* Only shown on touch screens, where the screenshot is too small to read */
+.shot-zoom {
+  display: none;
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(29, 29, 31, 0.72);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@media (hover: none) and (max-width: 860px) {
+  .shot-zoom { display: block; }
 }
 
 .shot-frame img {
@@ -62,6 +93,7 @@
 /* Low-resolution screenshot: keep it sharp at its real size on a grey mat */
 .shot-frame.is-small {
   display: flex;
+  align-items: center;
   justify-content: center;
   padding: clamp(1.25rem, 5vw, 3rem);
   box-shadow: none;
@@ -149,10 +181,32 @@
   .detail-grid { grid-template-columns: 1fr; }
 }
 
+/* Phone screens are buttons too (they open the viewer) */
+.phones .phone {
+  display: block;
+  width: 100%;
+  border: 0;
+  font: inherit;
+  cursor: zoom-in;
+}
+
 @media (max-width: 560px) {
   .shot-frame { border-radius: 14px; }
-  .phones { border-radius: 22px; grid-template-columns: repeat(auto-fit, minmax(0, 200px)); }
+  .shot-frame:focus-visible { border-radius: 14px; }
+  .shot-frame.is-small { padding: 1rem; }
+  /* Two phones per row instead of one tall column */
+  .phones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 1rem;
+    padding: 1.5rem 1rem;
+    border-radius: 22px;
+  }
+  .phones figure { width: calc(50% - 0.5rem); max-width: 200px; }
+  .phones figcaption { font-size: 0.78rem; }
   .detail-body { font-size: 1.05rem; }
+  .detail-head .btn { width: 100%; max-width: 320px; justify-content: center; }
 }
 
 /* ── Next project ──────────────────────────────────── */

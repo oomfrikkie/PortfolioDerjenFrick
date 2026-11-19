@@ -17,6 +17,9 @@
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  height: 44px;
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: -0.01em;
@@ -53,13 +56,88 @@
   background: var(--accent-hover);
 }
 
-@media (max-width: 480px) {
-  .nav-links { gap: 1.1rem; }
-  /* CV is also in the hero and contact section */
-  .nav-links .nav-cv { display: none; }
+/* ── Mobile menu ──────────────────────────────────── */
+
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  border: 0;
+  background: none;
+  cursor: pointer;
 }
 
-@media (max-width: 350px) {
-  .nav-logo { font-size: 0.86rem; }
-  .nav-links { gap: 0.65rem; font-size: 0.76rem; }
+/* Two lines that turn into an X */
+.nav-toggle span {
+  position: absolute;
+  left: 13px;
+  width: 18px;
+  height: 1.5px;
+  border-radius: 1px;
+  background: var(--text);
+  transition: transform 0.25s ease, top 0.25s ease;
+}
+
+.nav-toggle span:first-child { top: 18px; }
+.nav-toggle span:last-child { top: 25px; }
+
+.nav.is-open .nav-toggle span:first-child { top: 21.5px; transform: rotate(45deg); }
+.nav.is-open .nav-toggle span:last-child { top: 21.5px; transform: rotate(-45deg); }
+
+.nav-menu {
+  position: fixed;
+  z-index: 49;
+  top: 48px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  overflow-y: auto;
+  animation: menu-in 0.25s ease both;
+}
+
+.nav-menu[hidden] {
+  display: none;
+}
+
+.nav-menu ul {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 0.6rem 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.nav-menu li:last-child a {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--link);
+}
+
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Stop the page scrolling behind the open menu */
+html.menu-open {
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav.is-open { background: #fff; }
+}
+
+@media (min-width: 641px) {
+  .nav-menu { display: none !important; }
 }
